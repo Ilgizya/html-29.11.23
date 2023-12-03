@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        * {
+            transition: all 1s;
+        }
+
+        .content {
+            overflow: hidden;
+            height: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="button">Secret</button>
+    <div class="content">
+    </div>
+    <script>
+        const buttonEl = document.querySelector('.button');
+        const contentEl = document.querySelector('.content');
+        let show = false
+        const h3El = document.createElement('h3');
+        const textEl = document.createElement('p');
+        const imgEl = document.createElement('img');
+
+        function createElements() {
+            contentEl.style.backgroundColor = '#ccc'
+            h3El.textContent = "CATS"
+            textEl.textContent = "are very beautiful animals"
+            imgEl.src = "https://img.freepik.com/premium-photo/cute-little-cat-kitty-baby-animal_853115-5758.jpg"
+            contentEl.append(h3El)
+            contentEl.append(textEl)
+            contentEl.append(imgEl)
+        }
+
+        buttonEl.addEventListener('click', function (e) {
+            createElements()
+            contentEl.style.height = show ? '0' : '800px'
+            show = !show
+        });
+    </script>
+</body>
+
+</html>
